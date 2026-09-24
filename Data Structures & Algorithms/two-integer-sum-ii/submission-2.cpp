@@ -1,0 +1,16 @@
+class Solution {
+   public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        int l = 0;
+        int r = numbers.size() - 1;
+        while (l < r && numbers[l] + numbers[r] != target) {
+            if (numbers[l] + numbers[r] > target) {
+                r--;
+            } else if (numbers[l] + numbers[r] < target) {
+                l++;
+            }
+        }
+        
+        return {1+l, 1+r};
+    }
+};
